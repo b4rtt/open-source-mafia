@@ -574,6 +574,11 @@ const Index = () => {
           <h2 className="text-2xl md:text-3xl font-playfair font-bold mb-8 text-center">
             {t.signaturesTitle}
           </h2>
+          <p className="text-center text-muted-foreground mb-6">
+            {isLoadingSignatures
+              ? t.listLoading
+              : t.signaturesCount(signatures.length)}
+          </p>
 
           <div className="space-y-6">
             {isLoadingSignatures ? (
@@ -603,12 +608,6 @@ const Index = () => {
               ))
             )}
           </div>
-
-          <p className="text-center text-muted-foreground mt-8">
-            {isLoadingSignatures
-              ? t.listLoading
-              : t.signaturesCount(signatures.length)}
-          </p>
         </section>
 
         {/* Gallery Section */}
